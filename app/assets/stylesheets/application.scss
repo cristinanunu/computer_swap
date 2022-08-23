@@ -10,3 +10,38 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+.form-card{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #e5ddd8;
+  width: 50vw;
+  background-color: #FBF3EE;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  box-shadow: 5px 5px #bdafa7;
+}
+.create-form{
+  margin-top: 40px;
+}
+.form-container a{
+  text-decoration: none;
+  color: black;
+}
+.form-actions{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+form.new_computer{
+  width: 100%;
+}
