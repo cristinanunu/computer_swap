@@ -5,7 +5,11 @@
     <% @computers.each do |computer| %>
     <div class="container">
       <div class="row d-flex justify-content-between">
-        <img class="card-img-top" src="https://www.notebookcheck.com/typo3temp/_processed_/5/6/csm_MacBook_Pro_14_4e4d08d75d.jpg" alt="Card image cap" alt="Card image cap">
+        <% if computer.photo.attached? %>
+          <%= cl_image_tag(computer.photo.key, width: 400, height: 300, crop: :fill) %>
+        <% else %>
+          <li>No photo found</li>
+        <% end %>
         <%= computer.brand %>
         <%= computer.category %>
         <%= computer.screen_size %>

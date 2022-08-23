@@ -21,6 +21,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:brand, :category, :screen_size, :price)
+    params.require(:computer).permit(:brand, :category, :screen_size, :price, :photo)
   end
 end

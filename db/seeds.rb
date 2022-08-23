@@ -7,62 +7,57 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Clearing database..."
-User.destroy_all
 Computer.destroy_all
+User.destroy_all
 puts "Cleared!"
 
 puts "Creating users, computers..."
 
-User.create!(
-  first_name: "Bob",
-  last_name: "Rutherford",
-  email: "bob@fakemail.com",
-  password: "password"
-)
+apple = Computer.new(
+  brand: "Apple MacBook",
+  category: "Gaming",
+  screen_size: "13.0",
+  price: "500€",
 
-User.create!(
-  first_name: "Danny",
-  last_name: "Nuge",
-  email: "danny@realmail.com",
-  password: "password"
-)
-
-User.create!(
-  first_name: "Pauline",
-  last_name: "Marsh",
-  email: "pauline@fakemail.com",
-  password: "password"
-)
-
-User.all.each do |user|
-  Computer.create!(
-    user: user,
-    brand: ["Apple MacBook", "Microsoft Surface", "HP Probook"].sample,
-    category: ["Gaming", "Development", "Data Science"].sample,
-    screen_size: [13.0, 13.3, 15.0].sample,
-    price: [50, 80, 100].sample
+  user: User.create!(
+    first_name: "Bob",
+    last_name: "Rutherford",
+    email: "bob@fakemail.com",
+    password: "password",
   )
-end
+)
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
+apple.photo.attach(io: file, filename: "apple.jpg", content_type: "image/jpg")
+apple.save!
 
-puts "Done!"
+hp = Computer.new(
+  brand: "Microsoft Surface",
+  category: "Data Science",
+  screen_size: "13.3",
+  price: "700€",
+  user: User.create!(
+    first_name: "Pauline",
+    last_name: "Marsh",
+    email: "pauline@fakemail.com",
+    password: "password"
+  )
+)
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261654/hp2_moq3vw.jpg")
+hp.photo.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
+hp.save!
 
-# Computer.new(
-#   brand: "Apple MacBook",
-#   category: "Development",
-#   screen_size: 13.0,
-#   price: 80
-#   )
-
-# Computer.new(
-#   brand: "Microsoft Surface",
-#   category: "Gaming",
-#   screen_size: 15.0,
-#   price: 50
-#   )
-
-# Computer.new(
-#   brand: "HP Probook",
-#   category: "Development",
-#   screen_size: 13.3,
-#   price: 40
-#   )
+hp2 = Computer.new(
+  brand: "HP",
+  category: "Development",
+  screen_size: "15.0",
+  price: "1000€",
+  user: User.create!(
+    first_name: "Danny",
+    last_name: "Nuge",
+    email: "danny@realmail.com",
+    password: "password"
+  )
+)
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
+hp2.photo.attach(io: file, filename: "hp2.jpg", content_type: "image/jpg")
+hp2.save!
