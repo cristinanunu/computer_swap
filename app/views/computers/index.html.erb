@@ -8,7 +8,7 @@
         <p class="card-text"> Gaming </p>
         <p class="card-text"> 13.0 </p>
         <p class="card-text"> 500€</p>
-        <%= link_to "See details", computer_path(computer), class: "btn btn-primary" %>
+        <a href="#" class="btn btn-primary">See details</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -18,7 +18,6 @@
         <p class="card-text"> Development </p>
         <p class="card-text"> 13.3 </p>
         <p class="card-text"> 700€</p>
-        <%= link_to "See details", computers_path, class: "btn btn-flat" %>
         <a href="#" class="btn btn-primary">See details</a>
       </div>
     </div>
@@ -29,13 +28,8 @@
         <p class="card-text"> Data science </p>
         <p class="card-text"> 15.0 </p>
         <p class="card-text"> 1000€</p>
-        <%= link_to "See details", computers_path, class: "btn btn-flat" %>
         <a href="#" class="btn btn-primary">See details</a>
       </div>
     </div>
   </div>
 </div>
-
-<% @computers.each do |computer| %>
-  <%= computer %>
-<% end %>
