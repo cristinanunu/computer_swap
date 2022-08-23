@@ -27,7 +27,7 @@ apple = Computer.new(
   )
 )
 file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
-apple.photo.attach(io: file, filename: "apple.jpg", content_type: "image/jpg")
+apple.photos.attach(io: file, filename: "apple.jpg", content_type: "image/jpg")
 apple.save!
 
 hp = Computer.new(
@@ -43,7 +43,7 @@ hp = Computer.new(
   )
 )
 file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261654/hp2_moq3vw.jpg")
-hp.photo.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
+hp.photos.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
 hp.save!
 
 hp2 = Computer.new(
@@ -59,5 +59,5 @@ hp2 = Computer.new(
   )
 )
 file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
-hp2.photo.attach(io: file, filename: "hp2.jpg", content_type: "image/jpg")
+hp2.photos.attach(io: file, filename: "hp2.jpg", content_type: "image/jpg")
 hp2.save!

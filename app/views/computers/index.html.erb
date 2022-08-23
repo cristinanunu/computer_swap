@@ -6,10 +6,8 @@
     <% @computers.each do |computer| %>
       <div class="col">
         <div class="card">
-          <% if computer.photo.attached? %>
-            <%= cl_image_tag(computer.photo.key, width: 400, height: 300, crop: :fill) %>
-          <% else %>
-            <li>No photo found</li>
+          <% computer.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill %>
           <% end %>
           <%= computer.brand %>
           <%= computer.category %>
