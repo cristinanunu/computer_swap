@@ -1,21 +1,23 @@
 
 
 <div class="container">
-<h1>Available Computers</h1>
+  <h1>Available Computers</h1>
+  <div class="row d-flex justify-content-center">
     <% @computers.each do |computer| %>
-    <div class="container">
-      <div class="row d-flex justify-content-between">
-        <% if computer.photo.attached? %>
-          <%= cl_image_tag(computer.photo.key, width: 400, height: 300, crop: :fill) %>
-        <% else %>
-          <li>No photo found</li>
-        <% end %>
-        <%= computer.brand %>
-        <%= computer.category %>
-        <%= computer.screen_size %>
-        <%= computer.price %>
-        <%= link_to "See details", computer_path(computer), class: "btn btn-primary" %>
-      </div>
+      <div class="col">
+        <div class="card">
+          <% if computer.photo.attached? %>
+            <%= cl_image_tag(computer.photo.key, width: 400, height: 300, crop: :fill) %>
+          <% else %>
+            <li>No photo found</li>
+          <% end %>
+          <%= computer.brand %>
+          <%= computer.category %>
+          <%= computer.screen_size %>
+          <%= computer.price %>
+          <%= link_to "See details", computer_path(computer), class: "btn btn-primary" %>
+        </div>
       </div>
     <% end %>
+  </div>
 </div>
