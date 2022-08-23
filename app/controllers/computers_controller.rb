@@ -9,4 +9,18 @@ class ComputersController < ApplicationController
     @computer = Computer.find(params[:id])
   end
 
+  def new
+    @computer = Computer.new
+  end
+
+  def create
+    @computer = Computer.new(computer_params)
+    @computer.user = current_user
+  end
+
+  private
+
+  def computer_params
+    params.require(:computer).permit(:brand, :category, :screen_size, :price)
+  end
 end
