@@ -1,2 +1,16 @@
-<h1> <%= @computer.brand %>
-<%= link_to %>
+
+<div class="container">
+  <h1> <%= @computer.brand %></h1>
+  <ul>
+    <li><%= @computer.brand %></li>
+    <li><%= @computer.category %></li>
+    <li><%= @computer.screen_size %></li>
+    <li><%= @computer.price %></li>
+    <% if @computer.photo.attached? %>
+      <li><%= cl_image_tag(@computer.photo.key, width: 400, height: 300, crop: :fill) %></li>
+    <% else %>
+      <li>No photo found</li>
+    <% end %>
+  </ul>
+</div>
+<%= link_to "Back to Computers list ", computers_path, class: "btn btn-flat" %>

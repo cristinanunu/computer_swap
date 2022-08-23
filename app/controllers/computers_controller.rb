@@ -1,5 +1,5 @@
 class ComputersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @computers = Computer.all
@@ -21,6 +21,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:brand, :category, :screen_size, :price)
+    params.require(:computer).permit(:brand, :category, :screen_size, :price, :photo)
   end
 end
