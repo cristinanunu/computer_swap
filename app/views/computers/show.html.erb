@@ -1,2 +1,11 @@
-<h1> <%= @computer.brand %>
-<%= link_to %>
+
+<div class="container">
+  <h1> <%= @computer.brand %></h1>
+  <ul>
+    <li><%= @computer.brand %></li>
+    <li><%= @computer.category %></li>
+    <li><%= @computer.screen_size %></li>
+    <li><%= @computer.price %></li>
+  </ul>
+</div>
+<%= link_to "Back to Computers list ", computers_path, class: "btn btn-flat" %>
