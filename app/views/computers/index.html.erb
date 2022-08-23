@@ -1,10 +1,41 @@
 <h1>Computers</h1>
-<ul>
-  <% @computers.each do |computer| %>
-    <li><%= computer.brand %></li>
-    <br>
-    <li><%= computer.category %></li>
-    <br>
-    <li><%= computer.price %></li>
-    <% end %>
-</ul>
+<div class="container">
+  <div class="row d-flex justify-content-between">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.hp.com/de-de/shop/Html/Merch/Images/c08049771_1750x1285.jpg?imwidth=869">
+      <div class="card-body">
+        <h5 class="card-title"> HP </h5>
+        <p class="card-text"> Gaming </p>
+        <p class="card-text"> 13.0 </p>
+        <p class="card-text"> 500€</p>
+        <%= link_to "See details", computer_path(computer), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://m.media-amazon.com/images/I/81US0VWhguL._AC_SX679_.jpg">
+      <div class="card-body">
+        <h5 class="card-title"> HP </h5>
+        <p class="card-text"> Development </p>
+        <p class="card-text"> 13.3 </p>
+        <p class="card-text"> 700€</p>
+        <%= link_to "See details", computers_path, class: "btn btn-flat" %>
+        <a href="#" class="btn btn-primary">See details</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.notebookcheck.com/typo3temp/_processed_/5/6/csm_MacBook_Pro_14_4e4d08d75d.jpg" alt="Card image cap" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> Apple MacBook </h5>
+        <p class="card-text"> Data science </p>
+        <p class="card-text"> 15.0 </p>
+        <p class="card-text"> 1000€</p>
+        <%= link_to "See details", computers_path, class: "btn btn-flat" %>
+        <a href="#" class="btn btn-primary">See details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @computers.each do |computer| %>
+  <%= computer %>
+<% end %>
