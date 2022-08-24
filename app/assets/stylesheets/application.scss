@@ -6,10 +6,16 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 .form-container{
   display: flex;
@@ -49,3 +55,17 @@ form.new_computer{
 .card{
   padding:15px;
 }
+
+
+
+.form-inputs{ margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #e5ddd8;
+  width: 50vw;
+  background-color: #c2bebc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  box-shadow: 5px 5px #bdafa7;}
