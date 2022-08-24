@@ -1,19 +1,12 @@
 
 
 <div class="container">
-<<<<<<< HEAD
   <h1>Available Computers</h1>
   <div class="row d-flex justify-content-between">
     <% @computers.each do |computer| %>
       <div class="col-4 mb-3">
         <div class="card h-100 d-flex row justify-content-center">
-=======
-  <h1 style="align">Available Computers</h1>
-  <div class="row d-flex justify-content-center">
-    <% @computers.each do |computer| %>
-      <div class="col">
-        <div class="card" id="product_card">
->>>>>>> ec9182375196692319b1b655a9d10b78aba4df6e
+
           <% computer.photos.each do |photo| %>
             <%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill %>
           <% end %>
