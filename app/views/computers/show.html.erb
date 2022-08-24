@@ -24,3 +24,12 @@
     <%= link_to "Back to Computers list ", computers_path, class: "btn btn-flat " %>
   </div>
 </div>
+
+<%# create a new booking  %>
+<h1>Book this laptop</h1>
+<%= simple_form_for [@computer, @booking] do |f| %>
+  <%# <%= f.input :brand %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>

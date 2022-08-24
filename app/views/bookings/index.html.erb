@@ -1,0 +1,10 @@
+
+
+
+
+<ul>
+<% @bookings.each do |booking| %>
+<h1>Welcome <%= booking.user_id %> </h1>
+  <li><%= booking.computer.brand %></li>
+<% end %>
+</ul>
