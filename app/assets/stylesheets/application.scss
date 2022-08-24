@@ -17,9 +17,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.form-container{
+.card {
+  padding:15px;
+}
+
+.create-form{
+  margin-top: 40px;
+}
+
+.form-actions{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .form-card{
@@ -35,25 +45,15 @@ body {
   padding-bottom: 16px;
   box-shadow: 5px 5px #bdafa7;
 }
-.create-form{
-  margin-top: 40px;
-}
-.form-container a{
-  text-decoration: none;
-  color: black;
-}
-.form-actions{
+
+.form-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-form.new_computer{
-  width: 100%;
+  justify-content: center;
 }
 
-.card{
-  padding:15px;
+.form-container a {
+  text-decoration: none;
+  color: black;
 }
 
 .form-inputs{
@@ -69,3 +69,7 @@ form.new_computer{
   margin-bottom: 16px;
   padding-bottom: 16px;
   box-shadow: 5px 5px #e2d1c7;}
+
+form.new_computer {
+  width: 100%;
+}
