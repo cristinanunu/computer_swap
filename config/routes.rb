@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :computers do
-    resources :bookings, only: [:create, :destroy]
+    resources :bookings, only: [:show, :create, :destroy]
   end
 end
