@@ -7,6 +7,7 @@ class ComputersController < ApplicationController
 
   def show
     @computer = Computer.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -34,6 +35,8 @@ class ComputersController < ApplicationController
       end
     end
   end
+
+
 
   private
 
