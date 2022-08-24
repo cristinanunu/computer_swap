@@ -17,7 +17,7 @@ macAir = Computer.new(
   brand: "Apple MacAir", # change
   category: "Gaming",
   screen_size: "13.0",
-  price: "9€/day", # change
+  price: "9", # change
 
   user: User.create!(
     first_name: "Bob",
@@ -35,7 +35,7 @@ macBook = Computer.new(
   brand: "Apple Mac Book Pro", # change
   category: "Data Science",
   screen_size: "13.3",
-  price: "12€/day", # change
+  price: "12", # change
   user: User.create!(
     first_name: "Pauline",
     last_name: "Marsh",
@@ -51,7 +51,7 @@ hp = Computer.new(
   brand: "HP ProBook", # change
   category: "Development",
   screen_size: "15.0",
-  price: "15€/jour", # change
+  price: "15", # change
   user: User.create!(
     first_name: "Danny",
     last_name: "Nuge",
