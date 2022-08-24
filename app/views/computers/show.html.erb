@@ -3,7 +3,8 @@
   <div class="row">
     <h1> <%= @computer.brand %> </h1>
     <h4></h4>
-    <h3 id="title" >Owner:  <%= @computer.user.first_name %>  <%= @computer.user.last_name %></h3>
+    <h3 id="title" >Owner:  <%= @computer.user.first_name %>  <%= @computer.user.last_name %> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+</h3>
 
     <div  class="col d-flex justify-content-center" >
       <ul class="shadow p-3 mb-5 bg-white" id="specs">

@@ -18,9 +18,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.form-container{
+.card {
+  padding:15px;
+}
+
+.create-form{
+  margin-top: 40px;
+}
+
+.form-actions{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .form-card{
@@ -30,32 +40,33 @@ body {
   align-items: center;
   border: 3px solid #e5ddd8;
   width: 50vw;
-  background-color: #FBF3EE;
+  background-color: white;
   border-radius: 6px;
   margin-bottom: 16px;
   padding-bottom: 16px;
   box-shadow: 5px 5px #bdafa7;
 }
-.create-form{
-  margin-top: 40px;
+
+.form-container {
+  display: flex;
+  justify-content: center;
 }
-.form-container a{
+
+.form-container a {
   text-decoration: none;
   color: black;
 }
-.form-actions{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+
+.form-control {
+  background-color: white;
 }
-form.new_computer{
-  width: 100%;
-}
+
 
 .card{
   padding:15px;
 
+.form-select {
+  background-color: white;
 }
 
 .form-inputs{
@@ -65,8 +76,17 @@ form.new_computer{
   flex-direction: column;
   align-items: center;
   border: 3px solid #e5ddd8;
+  background-color: white;
   width: 50vw;
   border-radius: 6px;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  box-shadow: 5px 5px #e2d1c7;}
+  box-shadow: 1px 5px #e2d1c7;}
+
+form.new_computer {
+  width: 100%;
+}
+
+.index-container {
+  margin-top: 100px;
+}

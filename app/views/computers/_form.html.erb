@@ -1,20 +1,18 @@
 
 
   <%= simple_form_for(@computer) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%#= f.error_notification %>
+    <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="row form-inputs">
       <%= f.input :brand %>
-      <%= f.input :category %>
-      <%= f.input :screen_size %>
-      <%= f.input :price %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+      <%= f.input :category, collection: ["Data Science", "Development", "Gaming"] %>
+      <%= f.input :screen_size, label: "Screen size (inches)", collection: [10.1, 11.6, 12.5, 13.0, 13.3, 14.0, 15.0, 15.6, 17.3] %>
+      <%= f.input :price, label: "Price (€ per day)", input_html: { min: "0"}  %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
-
-    <div class="row form-actions">
-      <%= f.button :submit %>
-      <%= link_to "Go Back", computers_path %>
+    <br>
+    <div class="d-flex justify-content-around align-items-center">
+      <%= f.button :submit, "Post your laptop", class: "w-50 btn btn-flat" %>
+      <%= link_to "Back to computers", computers_path, class: "btn btn-outline-secondary" %>
     </div>
   <% end %>
-

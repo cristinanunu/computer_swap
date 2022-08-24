@@ -4,14 +4,12 @@ export default class extends Controller {
   static targets = ["navbar", "banner"]
 
   connect() {
-    console.log('hello')
     if (this.hasBannerTarget) {
       this.navbarTarget.classList.add("navbar-lewagon-transparent")
     }
   }
 
   updateNavbar() {
-    console.log("hi")
     if (!this.hasBannerTarget) {
       return
     }
