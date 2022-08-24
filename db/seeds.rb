@@ -13,11 +13,11 @@ puts "Cleared!"
 
 puts "Creating users, computers..."
 
-apple = Computer.new(
-  brand: "Apple MacBook",
+macAir = Computer.new(
+  brand: "Apple MacAir", # change
   category: "Gaming",
   screen_size: "13.0",
-  price: "500€",
+  price: "9", # change
 
   user: User.create!(
     first_name: "Bob",
@@ -26,15 +26,16 @@ apple = Computer.new(
     password: "password",
   )
 )
-file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
-apple.photo.attach(io: file, filename: "apple.jpg", content_type: "image/jpg")
-apple.save!
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661278409/macbookpro_y45wfw.jpg")
+macAir.photos.attach(io: file, filename: "MacAir.jpg", content_type: "image/jpg")
 
-hp = Computer.new(
-  brand: "Microsoft Surface",
+macAir.save!
+
+macBook = Computer.new(
+  brand: "Apple Mac Book Pro", # change
   category: "Data Science",
   screen_size: "13.3",
-  price: "700€",
+  price: "12", # change
   user: User.create!(
     first_name: "Pauline",
     last_name: "Marsh",
@@ -42,15 +43,15 @@ hp = Computer.new(
     password: "password"
   )
 )
-file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261654/hp2_moq3vw.jpg")
-hp.photo.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
-hp.save!
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661278409/mac_pro_tdxsb3.jpg")
+macBook.photos.attach(io: file, filename: "MacBookPro.jpg", content_type: "image/jpg")
+macBook.save!
 
-hp2 = Computer.new(
-  brand: "HP",
+hp = Computer.new(
+  brand: "HP ProBook", # change
   category: "Development",
   screen_size: "15.0",
-  price: "1000€",
+  price: "15", # change
   user: User.create!(
     first_name: "Danny",
     last_name: "Nuge",
@@ -58,6 +59,6 @@ hp2 = Computer.new(
     password: "password"
   )
 )
-file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661261659/mac_fmvki0.jpg")
-hp2.photo.attach(io: file, filename: "hp2.jpg", content_type: "image/jpg")
-hp2.save!
+file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661278410/hp_aaltfn.jpg")
+hp.photos.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
+hp.save!
