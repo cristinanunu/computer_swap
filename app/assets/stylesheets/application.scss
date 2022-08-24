@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import "pages/booking";
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -60,6 +61,10 @@ body {
   background-color: white;
 }
 
+
+.card{
+  padding:15px;
+
 .form-select {
   background-color: white;
 }
@@ -73,7 +78,6 @@ body {
   border: 3px solid #e5ddd8;
   background-color: white;
   width: 50vw;
-  // background-color: #c2bebc;
   border-radius: 6px;
   margin-bottom: 16px;
   padding-bottom: 16px;

@@ -20,16 +20,21 @@
       <% end %>
     </div>
   </div>
-    <div class="col d-flex justify-content-center" id="btn_back" >
-    <%= link_to "Back to Computers list ", computers_path, class: "btn btn-flat " %>
+    <div class="col d-flex justify-content-center"  >
+    <%= link_to "Back to Computers list", computers_path, class: "btn btn-flat " %>
+  </div>
+
+  <div class="bookingform  ">
+    <%# create a new booking  %>
+    <h1>Book this laptop</h1>
+
+      <%= simple_form_for [@computer, @booking] do |f| %>
+        <%# <%= f.input :brand %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <div class="row" id="book">
+          <%= f.submit class: "btn btn-flat" %>
+          <% end %>
+        </div>
   </div>
 </div>
-
-<%# create a new booking  %>
-<h1>Book this laptop</h1>
-<%= simple_form_for [@computer, @booking] do |f| %>
-  <%# <%= f.input :brand %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>

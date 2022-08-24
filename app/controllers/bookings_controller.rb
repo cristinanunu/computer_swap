@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
+  def show
+    @booking = current_user.bookings.last
   end
 
   def create
@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @computer = Computer.find(params[:computer_id])
     @booking.computer = @computer
     if @booking.save!
-      redirect_to computers_path
+      redirect_to computer_booking_path(@computer, @booking)
     else
       render "computers/show", status: :unprocessable_entity
     end

@@ -1,0 +1,25 @@
+
+<h1> </h1>
+
+<h1> </h1>
+
+<h1> </h1>
+
+<div class="container">
+<div class="row">
+  <h1> Welcome <%= current_user.first_name.capitalize  %> to your bookings!</h1>
+</div>
+<div class="card" id="bookingcard">
+  <h3><%= @booking.computer.brand  %></h3>
+</div>
+<div class="card" id="bookingcard">
+  <ul>
+    <li>Start Date: <%= @booking.start_date %></li>
+    <li>End Date: <%= @booking.end_date %></li>
+    </div>
+</div>
+</ul>
+    <div class="col d-flex justify-content-center"  >
+    <%= link_to "Back to Computers list", computers_path, class: "btn btn-flat" %>
+  </div>
+</div>
