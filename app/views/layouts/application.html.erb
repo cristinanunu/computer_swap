@@ -14,7 +14,9 @@
   <body data-controller="navbar">
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
-      <%= yield %>
+      <div class="<% unless controller.controller_name == "pages" && controller.action_name == "home" %>mt-5<% end %>">
+        <%= yield %>
+      </div>
       <%= render "shared/footer" %>
   </body>
 </html>
