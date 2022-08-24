@@ -6,11 +6,16 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 .form-container{
   display: flex;
