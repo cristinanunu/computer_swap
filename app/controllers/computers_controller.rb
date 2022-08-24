@@ -18,6 +18,7 @@ class ComputersController < ApplicationController
     @computer = Computer.new(computer_params)
     @computer.user = current_user
     @computer.save
+
     redirect_to computers_path
   end
 
