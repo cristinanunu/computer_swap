@@ -1,19 +1,23 @@
 
 
 <div class="container">
-  <h1>Available Computers</h1>
+  <h1 style="align">Available Computers</h1>
   <div class="row d-flex justify-content-center">
     <% @computers.each do |computer| %>
       <div class="col">
-        <div class="card">
+        <div class="card" id="product_card">
           <% computer.photos.each do |photo| %>
             <%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill %>
           <% end %>
-          <%= computer.brand %>
-          <%= computer.category %>
-          <%= computer.screen_size %>
-          <%= computer.price %>
-          <%= link_to "See details", computer_path(computer), class: "btn btn-primary" %>
+          <ul>
+            <li> <%= computer.brand %> </li>
+            <li> Useful for <%= computer.category %> </li>
+            <li> <%= computer.screen_size %> inches </li>
+            <li> <%= computer.price %> €/day </li>
+          </ul>
+          <div>
+            <%= link_to "See more", computer_path(computer), class: "btn btn-flat" %>
+          </div>
         </div>
       </div>
     <% end %>

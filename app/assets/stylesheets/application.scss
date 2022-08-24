@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 
 .form-container{
   display: flex;
@@ -49,3 +50,17 @@ form.new_computer{
 .card{
   padding:15px;
 }
+
+
+
+.form-inputs{ margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #e5ddd8;
+  width: 50vw;
+  background-color: #c2bebc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  box-shadow: 5px 5px #bdafa7;}
