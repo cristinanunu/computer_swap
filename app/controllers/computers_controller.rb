@@ -4,6 +4,12 @@ class ComputersController < ApplicationController
   def show
     @computer = Computer.find(params[:id])
     @booking = Booking.new
+
+    @marker =
+      [{
+        lat: current_user.latitude,
+        lng: current_user.longitude
+      }]
   end
 
   def new
