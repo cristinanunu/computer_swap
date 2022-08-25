@@ -5,10 +5,17 @@
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <%= f.input :brand %>
-      <%= f.input :category, collection: ["Data Science", "Development", "Gaming"] %>
+      <%= f.input :model %>
+      <%= f.input :year, placeholder: "2000", input_html: { min: 2000, max: 2022 } %>
       <%= f.input :screen_size, label: "Screen size (inches)", collection: [10.1, 11.6, 12.5, 13.0, 13.3, 14.0, 15.0, 15.6, 17.3] %>
+      <%= f.input :processor %>
+      <%= f.input :ram, label: "RAM" %>
+      <%= f.input :storage %>
+      <%= f.input :os, label: "OS", collection: ["Windows", "Mac OS", "Linux", "Ubuntu", "Fedora", "FreeBSD"] %>
+      <%= f.input :category, collection: ["Data Science", "Development", "Documentation", "Entertainment", "Gaming", "General Use", "Photo-Editing", "Video-Editing"] %>
       <%= f.input :price, label: "Price (€ per day)", input_html: { min: "0"}  %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :description, input_html: { maxlength: 500 } %>
     </div>
     <br>
     <div class="d-flex justify-content-around align-items-center">

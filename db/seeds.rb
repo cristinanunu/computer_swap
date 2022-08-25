@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Clearing database..."
+Booking.destroy_all
 Computer.destroy_all
 User.destroy_all
 puts "Cleared!"
@@ -14,11 +15,17 @@ puts "Cleared!"
 puts "Creating users, computers..."
 
 macAir = Computer.new(
-  brand: "Apple MacAir", # change
-  category: "Gaming",
+  brand: "Apple",
+  model:  "MacAir",
+  year: 2020,
   screen_size: "13.0",
-  price: "9", # change
-
+  processor: "Apple M1 with 8-core CPU and 7-core GPU",
+  ram: "8 GB",
+  storage: "256 GB SSD",
+  category: "Entertainment",
+  os: "Mac OS",
+  price: 9,
+  description: "The thin and powerful MacBook Air is a 13-inch laptop with a Retina display. This screen provides unprecedented sharpness and accurate color reproduction, allowing you to enjoy your favorite movies, series or photos.",
   user: User.create!(
     first_name: "Bob",
     last_name: "Rutherford",
@@ -32,10 +39,17 @@ macAir.photos.attach(io: file, filename: "MacAir.jpg", content_type: "image/jpg"
 macAir.save!
 
 macBook = Computer.new(
-  brand: "Apple Mac Book Pro", # change
-  category: "Data Science",
+  brand: "Apple",
+  model:  "MacBook Pro",
+  year: 2022,
   screen_size: "13.3",
-  price: "12", # change
+  processor: "Apple M1 with 8-core CPU and 7-core GPU",
+  ram: "8 GB",
+  storage: "256 GB SSD",
+  category: "Development",
+  os: "Mac OS",
+  price: 12,
+  description: "The MacBook Pro is a thin 13.3-inch laptop with unprecedented performance, a Touch Bar and a strong battery. With its 8-core CPU and 8-core GPU, the Apple M1 chip ensures lightning-fast performance and smooth graphics, allowing you to work smoothly with various demanding apps.",
   user: User.create!(
     first_name: "Pauline",
     last_name: "Marsh",
@@ -48,10 +62,17 @@ macBook.photos.attach(io: file, filename: "MacBookPro.jpg", content_type: "image
 macBook.save!
 
 hp = Computer.new(
-  brand: "HP ProBook", # change
-  category: "Development",
-  screen_size: "15.0",
-  price: "15", # change
+  brand: "HP",
+  model: "ProBook",
+  year: 2022,
+  screen_size: "15.6",
+  processor: "Intel Core i5-1135G7",
+  ram: "8 GB",
+  storage: "256 GB SSD",
+  category: "Documentation",
+  os: "Windows",
+  price: 15,
+  description: "Work quickly and securely on multiple tasks simultaneously with the reliable HP ProBook 450 G8 (27J14EA). With this laptop, you can quickly access your important documents anywhere and work on all your projects without any problems thanks to the powerful i5 processor and 8 GB of RAM, so you can multitask without any problems.",
   user: User.create!(
     first_name: "Danny",
     last_name: "Nuge",
@@ -62,3 +83,5 @@ hp = Computer.new(
 file = URI.open("https://res.cloudinary.com/carole-g/image/upload/v1661278410/hp_aaltfn.jpg")
 hp.photos.attach(io: file, filename: "hp.jpg", content_type: "image/jpg")
 hp.save!
+
+puts "Done!"
