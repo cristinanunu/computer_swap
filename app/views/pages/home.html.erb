@@ -2,7 +2,7 @@
   <div class="container">
     <h1 id="titlehome" >Computer-Swap allows <strong>you</strong> to rent laptops !</h1>
       <p>Choose your computer depending on your needs of <span data-controller="typed-js"></span></p>
-    <%# <a href="#startBrowsing"> Start Browsing<%= class: "btn btn-flat" %> </a> %>
+      <a class="btn btn-primary" href="#computers-anchor" role="button">Start browsing</a>
   </div>
 </div>
 <div class="steps-container">
@@ -30,9 +30,7 @@
 </div>
 
 
-
-<%# ------/ %>
-<div class="container">
+<div class="container" id="computers-anchor">
   <div class="index-container" id='startBrowsing'>
     <h1>Available Computers</h1>
   <%= render "searchbar", computers: @computers %>
