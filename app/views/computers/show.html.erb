@@ -1,22 +1,22 @@
-<div class="showcontainer">
-  <div class="details_card">
-    <ul>
-      <li><h2>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></h2></li>
-      <li><%= @computer.brand %></li>
-      <li><%= @computer.model %></li>
-      <li>From: <%= @computer.year %></li>
-      <li><%= @computer.screen_size %> inches </li>
-      <li>Processor: <%= @computer.processor %></li>
-      <li>Ram: <%= @computer.ram %></li>
-      <li>Storage: <%= @computer.storage %></li>
-      <li>OS: <%= @computer.os %></li>
-      <li>Category: <%= @computer.category %></li>
-      <li><h2><%= @computer.price %> €/day </h2></li>
-    </ul>
-  </div>
-  <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
+<div class="container">
+  <div class="details-wrapper d-flex justify-content-around">
+    <div class="details_card">
+      <ul>
+        <h2>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> &nbsp <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></h2>
+        <li><%= @computer.brand %></li>
+        <li><%= @computer.model %></li>
+        <li>From: <%= @computer.year %></li>
+        <li><%= @computer.screen_size %> inches </li>
+        <li>Processor: <%= @computer.processor %></li>
+        <li>Ram: <%= @computer.ram %></li>
+        <li>Storage: <%= @computer.storage %></li>
+        <li>OS: <%= @computer.os %></li>
+        <li>Category: <%= @computer.category %></li>
+        <li><h2><%= @computer.price %> €/day </h2></li>
+      </ul>
+    </div>
+
+    <div class="carousel-wrapper">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -41,18 +41,25 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+
+
+
+
 <div class="secondcontainer">
-  <div class="computer_map"></div>
-  <div class="bookingform  ">
+  <div class="container-map"
+    data-controller="map"
+    data-map-markers-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class="bookingform">
     <h1>Book this laptop</h1>
-      <%= simple_form_for [@computer, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <div class="btn_form_book">
-          <%= f.submit class: "btn btn-flat" %>
-          <% end %>
-        </div>
+    <%= simple_form_for [@computer, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+
+      <div class="btn_form_book">
+        <%= f.submit class: "btn btn-flat" %>
+      </div>
+    <% end %>
   </div>
 </div>
