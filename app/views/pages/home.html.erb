@@ -39,8 +39,8 @@
     <div class="cards">
       <% @computers.each do |computer| %>
         <div class="card">
-          <% computer.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, class: 'laptop-image' %>
+          <% if computer.photos.attached? %>
+            <%= cl_image_tag computer.photos.first.key, class: 'laptop-image' %>
           <% end %>
           <ul>
             <li> <%= computer.brand %> </li>

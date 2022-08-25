@@ -1,38 +1,56 @@
-
-<div class="container">
-  <div class="row">
-    <h1> <%= @computer.brand %> </h1>
-    <h4></h4>
-    <h3 id="title" >Owner:  <%= @computer.user.first_name %>  <%= @computer.user.last_name %> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-</h3>
-
-    <div  class="col d-flex justify-content-center" >
-      <ul class="shadow p-3 mb-5 bg-white" id="specs">
-        <li> Useful for <%= @computer.category %> </li>
-        <li> <%= @computer.screen_size %> inches </li>
-        <li> <%= @computer.price %> €/day </li>
-      </ul>
-    </div>
-
-    <div  class="col d-flex justify-content-center" >
-      <% @computer.photos.each do |photo|id="picture" %>
-        <%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill  %>
-      <% end %>
+<div class="showcontainer">
+  <div class="details_card">
+    <ul>
+      <li><h2>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></h2></li>
+      <li><%= @computer.brand %></li>
+      <li><%= @computer.model %></li>
+      <li>From: <%= @computer.year %></li>
+      <li><%= @computer.screen_size %> inches </li>
+      <li>Processor: <%= @computer.processor %></li>
+      <li>Ram: <%= @computer.ram %></li>
+      <li>Storage: <%= @computer.storage %></li>
+      <li>OS: <%= @computer.os %></li>
+      <li>Category: <%= @computer.category %></li>
+      <li><h2><%= @computer.price %> €/day </h2></li>
+    </ul>
+  </div>
+  <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <% @computer.photos.each_with_index do |photo, i| %>
+            <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+              <%= cl_image_tag photo.key, class: "carousel-img"  %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </div>
-    <div class="col d-flex justify-content-center"  >
-    <%= link_to "Back to Computers list", computers_path, class: "btn btn-flat " %>
-  </div>
-
+</div>
+</div>
+<div class="secondcontainer">
+  <div class="computer_map"></div>
   <div class="bookingform  ">
-    <%# create a new booking  %>
     <h1>Book this laptop</h1>
-
       <%= simple_form_for [@computer, @booking] do |f| %>
-        <%# <%= f.input :brand %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <div class="row" id="book">
+        <div class="btn_form_book">
           <%= f.submit class: "btn btn-flat" %>
           <% end %>
         </div>

@@ -44,13 +44,61 @@
 
 .bookingform{
   border: 2px solid rgb(188, 186, 186);
-  border-radius: 10px;
-  margin-top: 50px;
+  border-radius: 8px;
   padding: 20px;
   background-color: #e7e1e1;
   justify-content: center;
+  width: 40%;
+  margin-right: 2rem;
 }
-
-#book{
-  padding : 20px 350px 0px 350px;
+.btn_form_book{
+  display: flex;
+  justify-content: center;
+}
+.showcontainer{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  margin-top: 8rem;
+}
+.details_card{
+  margin-left: 8rem;
+  background: #FDF9FA;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid #3B0071;
+  padding-right: 8px;
+  width: 50%;
+}
+.details_card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.computer_img img{
+  border-radius: 8px;
+}
+.secondcontainer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.computer_map{
+  margin-left: 8rem;
+  background: #FDF9FA;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid #3B0071;
+  padding-right: 8px;
+}
+.carousel-img{
+  width: 100%;
+  max-height: 260px;
+  border: 2px solid #3B0071;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
 }
