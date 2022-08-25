@@ -13,9 +13,9 @@ class ComputersController < ApplicationController
   def create
     @computer = Computer.new(computer_params)
     @computer.user = current_user
-    @computer.save
+    @computer.save!
 
-    redirect_to computers_path
+    redirect_to dashboard_path
   end
 
   def edit
@@ -35,11 +35,16 @@ class ComputersController < ApplicationController
     end
   end
 
+  def destroy
+    @computer = Computer.find(params[:id])
+    @computer.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
 
 
   private
 
   def computer_params
-    params.require(:computer).permit(:brand, :category, :screen_size, :price, photos: [])
+    params.require(:computer).permit(:brand, :model, :year, :screen_size , :processor, :ram,  :storage, :category, :os, :price, :description, photos: [])
   end
 end

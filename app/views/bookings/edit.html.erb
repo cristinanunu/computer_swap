@@ -1,0 +1,19 @@
+<br>
+<br>
+
+<br>
+
+  <div class="bookingform  ">
+    <%# update a new booking  %>
+    <h1>Update your booking</h1>
+
+      <%= simple_form_for [ @booking] do |f| %>
+        <%# <%= f.input :brand %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <div class="row" id="book">
+          <%= f.submit class: "btn btn-flat" %>
+          <% end %>
+        </div>
+  </div>
+</div>

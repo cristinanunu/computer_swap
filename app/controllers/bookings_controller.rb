@@ -15,6 +15,29 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    respond_to do |format|
+      if @booking.update(booking_params)
+        format.html { redirect_to dashboard_path, notice: "Booking was successfully updated." }
+        format.json { render :show, status: :ok, location: @booking }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def booking_params
