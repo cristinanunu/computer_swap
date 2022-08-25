@@ -2,29 +2,57 @@
   <div class="container">
     <h1 id="titlehome" >Computer-Swap allows <strong>you</strong> to rent laptops !</h1>
       <p>Choose your computer depending on your needs of <span data-controller="typed-js"></span></p>
-      <%= link_to "Start browsing", computers_path, class: "btn btn-flat" %>
+    <%# <a href="#startBrowsing"> Start Browsing<%= class: "btn btn-flat" %> </a> %>
   </div>
 </div>
 <div class="steps-container">
-<div class="card" style="width: 18rem;">
+<div class="card" id="card1" style="width: 18rem;">
   <h3>Choose it</h3>
   <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-text"> Explore our catalog of available laptops</p>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
+<div class="card" id="card1" style="width: 18rem;">
   <h3>Book it</h3>
   <img src="https://res.cloudinary.com/carole-g/image/upload/v1661286242/booking_sb1pii.avif" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-text"> Book the computer you need, when you need it</p>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
+<div class="card" id="card1" style="width: 18rem;">
   <h3>Bring it back</h3>
   <img src="https://images.unsplash.com/photo-1522201949034-507737bce479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-text"> Bring the computer back to the owner</p>
   </div>
 </div>
+</div>
+
+
+
+<%# ------/ %>
+<div class="container">
+  <div class="index-container" id='startBrowsing'>
+    <h1>Available Computers</h1>
+  <%= render "searchbar", computers: @computers %>
+    <div class="cards">
+      <% @computers.each do |computer| %>
+        <div class="card">
+          <% computer.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, class: 'laptop-image' %>
+          <% end %>
+          <ul>
+            <li> <%= computer.brand %> </li>
+            <li> Useful for <%= computer.category %> </li>
+            <li> <%= computer.screen_size %> inches </li>
+            <li> <strong><%= computer.price %>€/day</strong> </li>
+          </ul>
+          <div class="container justify-content-center">
+            <%= link_to "See more", computer_path(computer), class: "btn btn-outline-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
