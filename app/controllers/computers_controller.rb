@@ -1,5 +1,5 @@
 class ComputersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @computer = Computer.find(params[:id])
@@ -15,7 +15,7 @@ class ComputersController < ApplicationController
     @computer.user = current_user
     @computer.save
 
-    redirect_to computers_path
+    redirect_to @computer
   end
 
   def edit
@@ -35,11 +35,9 @@ class ComputersController < ApplicationController
     end
   end
 
-
-
   private
 
   def computer_params
-    params.require(:computer).permit(:brand, :category, :screen_size, :price, photos: [])
+    params.require(:computer).permit(:brand, :category, :screen_size, :price, :model, :os, :ram, :processor, :year, :storage, :description, photos: [])
   end
 end
