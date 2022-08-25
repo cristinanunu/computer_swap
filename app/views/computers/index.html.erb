@@ -1,7 +1,7 @@
 <div class="container">
   <div class="index-container">
     <h1>Available Computers</h1>
-  <%= render "searchbar", computers: @computers %>
+  <%= render "pages/searchbar", computers: @computers %>
     <div class="row d-flex justify-content-center">
       <% @computers.each do |computer| %>
         <div class="col-3 mb-3 mx-3">

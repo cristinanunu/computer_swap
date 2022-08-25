@@ -1,5 +1,5 @@
 class ComputersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @computer = Computer.find(params[:id])
@@ -14,7 +14,6 @@ class ComputersController < ApplicationController
     @computer = Computer.new(computer_params)
     @computer.user = current_user
     @computer.save!
-
     redirect_to dashboard_path
   end
 
@@ -35,6 +34,7 @@ class ComputersController < ApplicationController
     end
   end
 
+
   def destroy
     @computer = Computer.find(params[:id])
     @computer.destroy
@@ -46,5 +46,6 @@ class ComputersController < ApplicationController
 
   def computer_params
     params.require(:computer).permit(:brand, :model, :year, :screen_size , :processor, :ram,  :storage, :category, :os, :price, :description, photos: [])
+
   end
 end
