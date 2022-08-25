@@ -16,7 +16,6 @@
       <%= f.input :price, label: "Price (€ per day)", input_html: { min: "0"}  %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.input :description, input_html: { maxlength: 500 } %>
-    </div>
     <br>
     <div class="d-flex justify-content-around align-items-center">
       <%= f.button :submit, "Post your laptop", class: "w-50 btn btn-flat" %>
