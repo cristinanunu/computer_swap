@@ -18,6 +18,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.btn-outline-danger:hover {
+  color: white;
+}
+
 .card {
   padding:15px;
 }
@@ -59,11 +63,6 @@ body {
 
 .form-control {
   background-color: white;
-}
-
-
-.card {
-  padding:15px;
 }
 
 .form-select {
