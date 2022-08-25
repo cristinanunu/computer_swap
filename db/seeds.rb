@@ -30,6 +30,7 @@ macAir = Computer.new(
     first_name: "Bob",
     last_name: "Rutherford",
     email: "bob@fakemail.com",
+    address: "Jacob Obrechtstraat 92, 1071 KR Amsterdam",
     password: "password",
   )
 )
@@ -54,6 +55,7 @@ macBook = Computer.new(
     first_name: "Pauline",
     last_name: "Marsh",
     email: "pauline@fakemail.com",
+    address: "Tweede Oosterparkstraat 128, 1092 BP Amsterdam",
     password: "password"
   )
 )
@@ -77,6 +79,7 @@ hp = Computer.new(
     first_name: "Danny",
     last_name: "Nuge",
     email: "danny@realmail.com",
+    address: "Van Hogendorpstraat 159-121, 1051 GA Amsterdam",
     password: "password"
   )
 )
