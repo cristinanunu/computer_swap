@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>My Renting Dashboard</h1>
+
+  <h3> My Computer : </h3>
+  <ul>
+   <li><%= @computer.brand %> </li>
+  <li> <%= @computer.model %> </li>
+  <li><%= @computer.price %> €/day </li>
+  </ul>
+
+    <div  class="col d-flex justify-content-center" >
+        <% @computer.photos.each do |photo|id="picture" %>
+          <%= cl_image_tag photo.key, width: 200, height: 150, crop: :fill  %>
+        <% end %>
+    </div>
+
+  <%= link_to "Add a Computer",  new_computer_path, class: "btn btn-flat" %>
+  <%= link_to "Edit",  edit_computer_path(@computer), class: "btn btn-flat" %>
+  <%= link_to "Delete", computer_path(@computer), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+</div>
+
+<div class="container">
+
+
+    <h3> My Bookings : </h3>
+
+    <% @bookings.each do |booking| %>
+      <li> Start Date : <%= booking.start_date  %></li>
+      <li> End Date :  <%= booking.end_date %> </li>
+      <% start = booking.start_date %>
+      <% last = booking.end_date %>
+      <% result = last - start %>
+      <% price = result.to_i * @computer.price %>
+      <li> Number of Renting Days : <%= result.to_i %> days</li>
+      <li> Total Balance : <%= price %> Euros </li>
+
+<br>
+
+      <%= link_to "Edit",   edit_booking_path(booking), class: "btn btn-flat" %>
+      <%= link_to "Delete",   booking_path(booking), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+
+<% end %>
+</div>
