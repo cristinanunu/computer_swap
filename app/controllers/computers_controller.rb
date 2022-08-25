@@ -1,10 +1,6 @@
 class ComputersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @computers = Computer.all
-  end
-
   def show
     @computer = Computer.find(params[:id])
     @booking = Booking.new
