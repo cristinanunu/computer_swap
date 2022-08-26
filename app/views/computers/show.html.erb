@@ -1,14 +1,15 @@
 <div class="container">
 
   <div class="title-wrapper mb-4">
-    <h3><%= @computer.brand %> <%= @computer.model %></h3>
-    <h4>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> &nbsp
+    <h1><%= @computer.brand %> <%= @computer.model %></h1>
+    <h3>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %>&nbsp
 
     <% if @computer.user.photo.present? %>
       <%= image_tag @computer.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% else %>
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
+    </h3>
 
   </div>
 
@@ -43,28 +44,27 @@
     <div class="details_card w-100 px-4">
       <ul>
       <h3 class="mb-3" style="text-align: left">Specs</h3>
-        <li><strong>Year: </strong><%= @computer.year %></li>
-        <li><strong>Screen size: </strong><%= @computer.screen_size %> inches </li>
-        <li><strong>Processor: </strong><%= @computer.processor %></li>
-        <li><strong>Ram: </strong><%= @computer.ram %></li>
-        <li><strong>Storage: </strong><%= @computer.storage %></li>
-        <li><strong>OS: </strong><%= @computer.os %></li>
-        <li><strong>Category: </strong><%= @computer.category %></li>
-        <br>
-        <p><%= @computer.description %></p>
-        <li class="mt-2" style="list-style: none"><h3 style="text-align: right"><%= @computer.price %> €/day</h3></li>
+        <li class="spec-list"><strong>Year: </strong><%= @computer.year %></li class="spec-list">
+        <li class="spec-list"><strong>Screen size: </strong><%= @computer.screen_size %> inches </li class="spec-list">
+        <li class="spec-list"><strong>Processor: </strong><%= @computer.processor %></li class="spec-list">
+        <li class="spec-list"><strong>Ram: </strong><%= @computer.ram %></li class="spec-list">
+        <li class="spec-list"><strong>Storage: </strong><%= @computer.storage %></li class="spec-list">
+        <li class="spec-list"><strong>OS: </strong><%= @computer.os %></li class="spec-list">
+        <li class="spec-list"><strong>Category: </strong><%= @computer.category %></li class="spec-list">
+        <p class="spec-list pt-3"><%= @computer.description %></p>
+        <li class="spec-list pt-3" style="list-style: none"><h3 class="details-price" style="text-align: right"><%= @computer.price %> €/day</h3></li>
       </ul>
     </div>
 
   <div class="bookingform w-100">
     <h2><strong>Book this laptop</strong></h2>
     <%= simple_form_for [@computer, @booking] do |f| %>
-      <strong><%= f.input :start_date %></strong>
+      <h4><strong><%= f.input :start_date  %></strong></h4>
       <br>
-      <strong><%= f.input :end_date %></strong>
+      <h4><strong><%= f.input :end_date %></strong></h4>
       <br>
       <div class="btn_form_book">
-        <%= f.submit class: "btn btn-flat w-50" %>
+        <%= f.submit class: "btn btn-flat mt-4" %>
       </div>
     <% end %>
   </div>

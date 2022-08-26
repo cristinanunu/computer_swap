@@ -1,12 +1,21 @@
 @import "home";
 
-.title-wrapper h3 {
+.title-wrapper h1 {
+  font-size: 60px;
   text-align: left !important;
+}
+
+.title-wrapper h2, h3 {
+  text-align: left !important;
+}
+
+.details-price {
+  text-align: right !important;
 }
 
 .carousel-img{
   width: 100%;
-  max-height: 500px;
+  max-height: 550px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -82,9 +91,13 @@
   text-align: center !important;
 }
 
-.btn_form_book{
+.btn_form_book {
   display: flex;
   justify-content: center;
+  input {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 .details_card {
@@ -138,6 +151,10 @@
   height: 340px;
   border: 2px solid #bcbaba;
   border-radius: 8px;
+}
+
+.spec-list {
+  font-size: 20px;
 }
 
 // .name-owner-wrapper {
