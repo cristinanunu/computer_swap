@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @computer = Computer.find(params[:computer_id])
     @booking.computer = @computer
     if @booking.save!
-      redirect_to computer_booking_path(@computer, @booking)
+      redirect_to dashboard_path
     else
       render "computers/show", status: :unprocessable_entity
     end
