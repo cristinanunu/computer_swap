@@ -6,10 +6,18 @@
 
 .carousel-img{
   width: 100%;
-  max-height: 450px;
+  max-height: 500px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.carousel-wrapper {
+  // display:flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding-right: 50px;
+  // width: 390px;
 }
 
 .show-body-wrapper {
@@ -93,6 +101,7 @@
 
 .details_card ul {
   padding-right: 20px;
+  list-style: none;
 }
 
 .details_card h2 {
@@ -131,15 +140,7 @@
   border-radius: 8px;
 }
 
-.name-owner-wrapper {
-  display: flex;
-  justify-content: start;
-}
-
-.carousel-wrapper {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 50px;
-  width: 390px;
-}
+// .name-owner-wrapper {
+//   display: flex;
+//   justify-content: start;
+// }
