@@ -1,20 +1,16 @@
 <div class="container">
-  <div class="details-wrapper d-flex justify-content-around">
-    <div class="details_card">
-      <ul>
-        <h2>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> &nbsp <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></h2>
-        <li><%= @computer.brand %></li>
-        <li><%= @computer.model %></li>
-        <li>From: <%= @computer.year %></li>
-        <li><%= @computer.screen_size %> inches </li>
-        <li>Processor: <%= @computer.processor %></li>
-        <li>Ram: <%= @computer.ram %></li>
-        <li>Storage: <%= @computer.storage %></li>
-        <li>OS: <%= @computer.os %></li>
-        <li>Category: <%= @computer.category %></li>
-        <li><h2><%= @computer.price %> €/day </h2></li>
-      </ul>
-    </div>
+
+  <div class="title-wrapper mb-4">
+    <h3><%= @computer.brand %> <%= @computer.model %></h3>
+    <h4>Owner: <%= @computer.user.first_name %> <%= @computer.user.last_name %> &nbsp
+
+    <% if @computer.user.photo.present? %>
+      <%= image_tag @computer.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% else %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
+
+  </div>
 
     <div class="carousel-wrapper">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -40,26 +36,46 @@
         </button>
       </div>
     </div>
+
+
+   <div class="show-body-wrapper">
+
+    <div class="details_card w-100 px-4">
+      <ul>
+      <h3 class="mb-3" style="text-align: left">Specs</h3>
+        <li><strong>Year: </strong><%= @computer.year %></li>
+        <li><strong>Screen size: </strong><%= @computer.screen_size %> inches </li>
+        <li><strong>Processor: </strong><%= @computer.processor %></li>
+        <li><strong>Ram: </strong><%= @computer.ram %></li>
+        <li><strong>Storage: </strong><%= @computer.storage %></li>
+        <li><strong>OS: </strong><%= @computer.os %></li>
+        <li><strong>Category: </strong><%= @computer.category %></li>
+        <br>
+        <p><%= @computer.description %></p>
+        <li class="mt-2" style="list-style: none"><h3 style="text-align: right"><%= @computer.price %> €/day</h3></li>
+      </ul>
+    </div>
+
+  <div class="bookingform w-100">
+    <h2><strong>Book this laptop</strong></h2>
+    <%= simple_form_for [@computer, @booking] do |f| %>
+      <strong><%= f.input :start_date %></strong>
+      <br>
+      <strong><%= f.input :end_date %></strong>
+      <br>
+      <div class="btn_form_book">
+        <%= f.submit class: "btn btn-flat w-50" %>
+      </div>
+    <% end %>
   </div>
 
+ </div>
 
 
-
-<div class="secondcontainer">
-  <div class="container-map"
+<div class="w-100 mt-3">
+  <div class="container-map w-100"
     data-controller="map"
     data-map-markers-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <div class="bookingform">
-    <h1>Book this laptop</h1>
-    <%= simple_form_for [@computer, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-
-      <div class="btn_form_book">
-        <%= f.submit class: "btn btn-flat" %>
-      </div>
-    <% end %>
   </div>
 </div>

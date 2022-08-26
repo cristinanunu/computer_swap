@@ -1,5 +1,23 @@
 @import "home";
 
+.title-wrapper h3 {
+  text-align: left !important;
+}
+
+.carousel-img{
+  width: 100%;
+  max-height: 450px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.show-body-wrapper {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 1rem;
+}
+
 #cardProduct{
   width: 100%;
   height: 100%;
@@ -42,39 +60,50 @@
   padding-bottom: 30px;
 }
 
-.bookingform{
-  border: 2px solid rgb(188, 186, 186);
+.bookingform {
+  // border: 2px solid rgb(188, 186, 186);
   border-radius: 8px;
   padding: 20px;
-  background-color: #e7e1e1;
+  background-color: white;
   width: 40%;
   margin-right: 2rem;
+  box-shadow: 3px 5px #e0e0e0f3;
 }
+
+.bookingform h2 {
+  text-align: center !important;
+}
+
 .btn_form_book{
   display: flex;
   justify-content: center;
 }
-.showcontainer{
-  width: 100vw;
-  margin-top: 8rem;
-}
-.details_card{
+
+.details_card {
   // margin-left: 91px;
-  background: #FDF9FA;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 8px;
-  border: 2px solid #bcbaba;
-  padding-left: 4px;
-  padding-right: 8px;
+  // border: 2px solid #bcbaba;
   width: 40%;
+  padding-top: 20px;
+}
+
+.details_card ul {
+  padding-right: 20px;
 }
 
 .details_card h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.showcontainer{
+  width: 100vw;
+  margin-top: 8rem;
 }
 .computer_img img{
   border-radius: 8px;
@@ -91,27 +120,19 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
-  border: 2px solid #3B0071;
+  // border: 2px solid #3B0071;
   padding-right: 8px;
-}
-.carousel-img{
-  width: 100%;
-  max-height: 260px;
-  border: 2px solid #3B0071;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 8px;
 }
 
 .container-map {
-  width: 40%;
+  width: 100%;
   height: 340px;
   border: 2px solid #bcbaba;
   border-radius: 8px;
 }
 
-.carousel-wrapper {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 50px;
+
+.name-owner-wrapper {
+  display: flex;
+  justify-content: start;
 }
