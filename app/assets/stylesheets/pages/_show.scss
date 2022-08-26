@@ -34,7 +34,6 @@
   align-items: center;
 }
 
-
 #product_card img{
   height: 150px;
   width: 200px;
@@ -59,7 +58,6 @@
   margin-top: 8rem;
 }
 .details_card{
-  // margin-left: 91px;
   background: #FDF9FA;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -69,6 +67,7 @@
   padding-left: 4px;
   padding-right: 8px;
   width: 40%;
+  padding: 8px;
 }
 
 .details_card h2 {
