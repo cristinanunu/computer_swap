@@ -90,7 +90,7 @@ msi = Computer.new(
   category: "Gaming",
   os: "Windows",
   price: 15,
-  description: "Amazing gaming laptop, can run any game without being pluged, poerwfull and lightweight the perfect computer for gamers that are moving around.",
+  description: "Amazing gaming laptop! Can run any game without being plugged in, powerful and lightweight, the perfect computer for gamers who are moving around.",
   user: User.create!(
     first_name: "Mango",
     last_name: "Artis",
