@@ -131,8 +131,15 @@
   border-radius: 8px;
 }
 
-
 .name-owner-wrapper {
   display: flex;
   justify-content: start;
+}
+
+.carousel-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50px;
+  width: 390px;
 }
