@@ -1,35 +1,29 @@
-<br>
-
-<div class="container">
+<div class="container dashboard">
   <h2>My Renting Dashboard</h2>
+    <div class="row">
+      <div class ="card-box no-hover col-6">
+              <h3> My Computer </h3>
+                <ul>
+                <li><%= @computer.brand %> </li>
+                <li> <%= @computer.model %> </li>
+                <li><%= @computer.price %> €/day </li>
+                </ul>
 
-  <div class="row d-flex justify-content-around">
-    <div class="col d-flex justify-content-around">
-      <div class="card justify-content-around" id="cardbash">
-          <h3> My Computer </h3>
-            <ul>
-            <li><%= @computer.brand %> </li>
-            <li> <%= @computer.model %> </li>
-            <li><%= @computer.price %> €/day </li>
-            </ul>
+                <% @computer.photos.each do |photo|id="picture" %>
+                    <%= cl_image_tag photo.key, width: 200, height: 150, crop: :fill  %>
+                <% end %>
 
-            <% @computer.photos.each do |photo|id="picture" %>
-                <%= cl_image_tag photo.key, width: 200, height: 150, crop: :fill  %>
-            <% end %>
-
-      <div class="card d-flex justify-content-between" id="buttondash">
-              <%= link_to "",  new_computer_path, class: "fa-solid fa-circle-plus" %>
-              <%= link_to "",  edit_computer_path(@computer), class: "fa-solid fa-pencil" %>
-              <%= link_to "", computer_path(@computer), class: "fa-solid fa-trash-can", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%# <div class="card button d-flex justify-content-between"> %>
+            <%= link_to "",  new_computer_path, class: "fa-solid fa-circle-plus" %>
+            <%= link_to "",  edit_computer_path(@computer), class: "fa-solid fa-pencil" %>
+            <%= link_to "", computer_path(@computer), class: "fa-solid fa-trash-can", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%# </div> %>
       </div>
-    </div>
 
-    <div class="card">
-      <h3> My Bookings </h3>
-    <div>
-
-      <% @bookings.each do |booking| %>
-        <div class="card justify-content-around" id="buttondashboard">
+      <div class="card-box no-hover col-6">
+        <h3> My Bookings </h3>
+        <% @bookings.each do |booking| %>
+        <div class="card-product-infos"></div>
           <li> Start Date : <%= booking.start_date  %></li>
           <li> End Date :  <%= booking.end_date %> </li>
           <% start = booking.start_date %>
@@ -37,16 +31,17 @@
           <% result = last - start %>
           <% price = result.to_i * @computer.price %>
           <li> Number of Renting Days : <%= result.to_i %> days</li>
-          <div class ="card">
+
+          <div class ="">
             <h5>Balance : <%= price %> Euros </h5>
           </div>
-          <div class ="card">
+
+          <div class ="">
             <%= link_to "",   edit_booking_path(booking), class: "fa-solid fa-pencil" %>
             <%= link_to "",   booking_path(booking), class: "fa-solid fa-trash-can", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-         </div>
-        </div>
+          </div>
+        <% end %>
       </div>
-       <% end %>
+    </div>
   </div>
 </div>
